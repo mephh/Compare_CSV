@@ -1,0 +1,10 @@
+C:\Users\baton\Desktop\csv c#\Compare_CSV\Compare_CSV\bin\Debug\Compare_CSV.exe.config
+C:\Users\baton\Desktop\csv c#\Compare_CSV\Compare_CSV\bin\Debug\Compare_CSV.exe
+C:\Users\baton\Desktop\csv c#\Compare_CSV\Compare_CSV\bin\Debug\Compare_CSV.pdb
+C:\Users\baton\Desktop\csv c#\Compare_CSV\Compare_CSV\obj\Debug\Compare_CSV.csprojAssemblyReference.cache
+C:\Users\baton\Desktop\csv c#\Compare_CSV\Compare_CSV\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\baton\Desktop\csv c#\Compare_CSV\Compare_CSV\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\baton\Desktop\csv c#\Compare_CSV\Compare_CSV\obj\Debug\Compare_CSV.csproj.GenerateResource.cache
+C:\Users\baton\Desktop\csv c#\Compare_CSV\Compare_CSV\obj\Debug\Compare_CSV.csproj.CoreCompileInputs.cache
+C:\Users\baton\Desktop\csv c#\Compare_CSV\Compare_CSV\obj\Debug\Compare_CSV.exe
+C:\Users\baton\Desktop\csv c#\Compare_CSV\Compare_CSV\obj\Debug\Compare_CSV.pdb
