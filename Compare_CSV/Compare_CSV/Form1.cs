@@ -22,9 +22,8 @@ namespace WindowsFormsApp1
         char delimiter1 = ' ';
         char delimiter2 = ' ';
         string[] columns;
-        List<string> listA = new List<string>();
-        List<string> listB = new List<string>();
         public string[] lineBuffer { get; set; }
+        List<Results> Lista = new List<Results>();
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -60,16 +59,14 @@ namespace WindowsFormsApp1
                     foreach (var item1 in columns)
                     {
                         checkedListBox1.Items.Add(item1);
-                        //dataGridView1.Columns.Add(item1, item1);    //przypisuje nazwy kolumn
+                        dataGridView1.Columns.Add(item1, item1);    //przypisuje nazwy kolumn
                     }
                     //ADD VALUES TO PROPER LISTS
                     while (!reader.EndOfStream)
                     {
                         var line = reader.ReadLine();
-                        //listA.Add(line);
                         lineBuffer = line.Split(delimiter1);
-                        Results.
-                        //dataGridView1.Rows.Add(line.Split(delimiter1));  //dodaje wiersze 
+                        addRow(lineBuffer[0],lineBuffer[1], lineBuffer[2],  lineBuffer[3],  lineBuffer[4],lineBuffer[5], lineBuffer[6] );
                     }
                     
                     textBox3.Text = "Pierwszy delimiter to: "+delimiter1;
@@ -85,7 +82,7 @@ namespace WindowsFormsApp1
                         foreach (var item in delimiters)
                         {
                             highestdel = 0;
-                            countd = columns_ff.Split(item).Length - 1; //splituje na itemy oddzielone charem -1 bo liczy od 0
+                            countd = columns_ff.Split(item).Length -1; //splituje na itemy oddzielone charem -1 bo liczy od 0
                             if (countd > highestdel)
                             {
                                 highestdel = countd;
@@ -96,13 +93,10 @@ namespace WindowsFormsApp1
                         foreach (var item1 in columns)
                         {
                             checkedListBox2.Items.Add(item1);
-                            //dataGridView2.Columns.Add(item1, item1);  //dodaje kolumny
                         }
                         while (!reader.EndOfStream)
                         {
                             var line = reader.ReadLine();
-                            listB.Add(line);
-                            //dataGridView2.Rows.Add(line.Split(delimiter2));   //dodaje wiersze
                         }
                         textBox3.Text = "Pierwszy delimiter to: " + delimiter1 + "Drugi delimiter to: " + delimiter2;
 
@@ -111,26 +105,19 @@ namespace WindowsFormsApp1
 
             }
         }
-        private void button5_Click(object sender, EventArgs e) //porownaj
+
+        private void addRow(string v1, string v2, string v3, string v4, string v5, string v6, string v7)
+        {
+            Lista.Add(new Results{Column1 = v1, Column2 = v2, Column3 = v3, Column4 = v4, Column5 = v5, Column6 = v6, Column7 = v7 });
+        }
+
+    private void button5_Click(object sender, EventArgs e) //porownaj
         {
             dataGridView1.Columns.Clear();  //wyczysc grid aby sie nie dopisywal
             dataGridView2.Columns.Clear();
-            foreach (int index in checkedListBox1.CheckedIndices)
-            {
-                dataGridView1.Columns.Add(columns[index], columns[index]);
-                foreach (var item in listA)
-                {
-                    item.Split(delimiter1);
-                    dataGridView1.Rows.Add(item[index]);
-                }
-                
-            }
-            foreach (int index in checkedListBox2.CheckedIndices)
-            {
-                dataGridView2.Columns.Add(columns[index], columns[index]);
-            }
+            dataGridView1.DataSource = Lista;
 
-          
+
 
         }
         private void button2_Click_1(object sender, EventArgs e)
